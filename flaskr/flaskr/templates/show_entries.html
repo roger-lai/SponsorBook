@@ -13,8 +13,9 @@
   {% endif %}-->
   <ul class="entries">
   {% for entry in entries %}
-  	<form action 
+  	<a href="/{{ url_for('flaskr.get_user',name=entry.first_name) }}">
     <li><h2>{{ entry.first_name }}</h2>{{ entry.last_name }}</li>
+	</a>
   {% else %}
     <li><em>Unbelievable.  No entries here so far</em></li>
   {% endfor %}

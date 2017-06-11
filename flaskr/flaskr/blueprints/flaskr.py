@@ -50,6 +50,12 @@ def show_entries():
     entries = cur.fetchall()
     return render_template('show_entries.html', entries=entries)
 
+@bp.route('/<path:name>', methods=['GET'])
+def get_user(name):
+     db = get_db()
+     cur = db.execute('select first_name, last_name from entries order by id desc')
+     entries = cur.fetchall()
+     return render_template('show_entries.html', entries=entries)
 
 @bp.route('/add', methods=['POST'])
 def add_entry():
