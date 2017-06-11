@@ -1,20 +1,10 @@
 {% extends "layout.html" %}
 {% block body %}
-<!--  {% if session.logged_in %}
-    <form action="{{ url_for('flaskr.add_entry') }}" method="post" class="add-entry">
-      <dl>
-        <dt>Title:
-        <dd><input type="text" size="30" name="title">
-        <dt>Text:
-        <dd><textarea name="text" rows="5" cols="40"></textarea>
-        <dd><input type="submit" value="Share">
-      </dl>
-    </form>
-  {% endif %}-->
   <ul class="entries">
   {% for entry in entries %}
-  	<form action 
+    <a href="/{{ url_for('get_user',name=entry.first_name) }}">
     <li><h2>{{ entry.first_name }}</h2>{{ entry.last_name }}</li>
+  </a>
   {% else %}
     <li><em>Unbelievable.  No entries here so far</em></li>
   {% endfor %}

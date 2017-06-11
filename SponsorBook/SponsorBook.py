@@ -4,7 +4,7 @@ from flask import Flask, request, session, g, redirect, url_for, abort, render_t
 
 
 app = Flask(__name__) # create the application instance :)
-app.config.from_object(__name__) # load config from this file , flaskr.py
+app.config.from_object(__name__)
 
 # Load default config and override config from an environment variable
 app.config.update(dict(
@@ -50,9 +50,16 @@ def initdb_command():
 @app.route("/", methods=['GET'])
 def index():
     db = get_db()
-    cur = db.execute('select first_name, last_name from children order by id desc')
+    cur = db.execute('select first_name, last_name from entries order by id desc')
     entries = cur.fetchall()
-    return render_template('index.html', entries=entries)
+    return render_template('show_entries.html', entries=entries)
+
+@app.route('/<path:name>', methods=['GET'])
+def get_user(name):
+     db = get_db()
+     cur = db.execute('select first_name, last_name from entries order by id desc')
+     entries = cur.fetchall()
+     return render_template('show_entries.html', entries=entries)
 
 @app.route("/sponsor/<friend>")
 def sponsor():
