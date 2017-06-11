@@ -1,9 +1,9 @@
-{% extends "layout.html" %}
+{% extends "index.html" %}
 {% block body %}
   <ul class="entries">
   {% for entry in entries %}
 	<button onclick="sub();"><h2>{{ entry.name }}</h2></button>
-	<form id="myForm" action="{{ url_for('get_user',name=entry.name) }}" method="get"></form> 
+	<form id="myForm" action="{{ url_for('get_user',name=entry.name) }}" method="get"></form>
   {% endfor %}
   <script>
       function sub(){

@@ -52,14 +52,14 @@ def index():
     db = get_db()
     cur = db.execute('select name from entries order by id desc')
     entries = cur.fetchall()
-    return render_template('show_entries.html', entries=entries)
+    return render_template('index.html', entries=entries)
 
-@app.route('/<path:name>', methods=['GET'])
-def get_user(name):
+@app.route("/stories", methods=['GET'])
+def get_user():
      db = get_db()
      cur = db.execute('select name from entries order by id desc')
      entries = cur.fetchall()
-     return render_template('show_entries.html', entries=entries)
+     return render_template('stories.html', entries=entries)
 
 @app.route("/sponsor/<friend>")
 def sponsor():
