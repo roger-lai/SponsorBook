@@ -12,69 +12,53 @@
     <title>CHIMEHACKS 4</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../static/css/2-col-portfolio.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="../static/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="../static/css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">SponsorBook</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
     <!-- Page Content -->
-    <div class="container">
+    <div class="page-wrapper container stories">
 
         <!-- Page Header -->
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Stories
-                </h1>
-            </div>
+            <nav class="col-md-12">
+              <p><a href="/">&lt; Home</a></p>
+              <h1>Read My Story.</h1>
+            </nav>
         </div>
         <!-- /.row -->
 
         {% block body %}
         <!-- Projects Row -->
-        <div class="row">
+        <div class="row stories-container">
             {% for entry in entries %}
-            <div class="col-md-6 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="{{ entry.picture }}" alt="">
-                </a>
-                <h3>
-                    <a href="#">{{ entry.name }}</a>
-                </h3>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <img data-toggle="modal" data-target="#{{entry.id}}" class="img-responsive" src="{{ entry.picture }}" alt="" />
+                <h3>{{ entry.name }}</h3>
                 <p>{{ entry.bio }}</p>
+
+                <div class="modal fade collapse" tabindex="-1" role="dialog" id="{{entry.id}}">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">{{entry.name}}</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>{{entry.long_description}}</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default">Sponsor Me!</button>
+                        <button type="button" class="msg btn btn-default">&nbsp;</button>
+                      </div>
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
             </div>
             {% endfor %}
         </div>
@@ -128,10 +112,11 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="../static/js/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../static/js/bootstrap.min.js"></script>
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </body>
 

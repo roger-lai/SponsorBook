@@ -29,6 +29,16 @@ body {
   padding-right: 0;
 }
 
+.stories-container [class*="col-"] {
+  padding: 35px;
+}
+
+a, a:hover,
+a:active,
+a:focus {
+  color: #fff;
+}
+
 h1, h2, p {
   margin: 0;
 }
@@ -36,7 +46,6 @@ h1, h2, p {
 h1 {
   font-family: 'Nexa';
   font-weight: bold;
-  color: #fff;
   font-size: 65px;
   width: 70%;
   text-transform: uppercase;
@@ -61,12 +70,14 @@ h2 {
   min-height: 100%;
   margin-bottom: -52px;
 }
-
 .page-wrapper.landing nav {
   height: 350px;
 }
 .page-wrapper.login nav {
   height: 300px;
+}
+.page-wrapper.stories nav {
+  height: 200px;
 }
 
 .page-wrapper.login section {
@@ -97,6 +108,7 @@ nav {
   padding-right: 0 !important;
   background: url(../images/nav-bg.png);
   background-size: cover;
+  color: #fff;
 }
 nav img {
   width: 50%;
@@ -108,8 +120,28 @@ nav img {
   }
 }
 .landing main p {
-  font-size: 27px;
+  font-size: 25px;
   margin-bottom: 40px;
+}
+
+.stories nav {
+  background-position: center;
+}
+
+.stories-container .portfolio-item img {
+  transition: 0.3s linear all;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+.stories-container .portfolio-item img:hover {
+  transition: 0.3s linear all;
+  box-shadow: 10px 10px 0 #403693;
+}
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+  background: #3F3592;
+  border-color: #3F3592;
 }
 
 .terrible {
@@ -129,4 +161,36 @@ footer {
 }
 footer p {
   padding: 15px;
+}
+
+.modal-title {
+  font-family: 'Nexa';
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.modal {
+  top: 30px;
+}
+.modal .msg {
+  padding-left: 30px;
+  background: url(../images/messenger.png);
+  background-color: #fff;
+  background-size: 20px 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.modal-footer {
+  background: url(../images/modal-bg.png);
+  background-size: cover;
+  background-position: center;
+}
+
+button.close {
+  color: #2E2195;
+}
+
+.close {
+  opacity: 1;
 }
