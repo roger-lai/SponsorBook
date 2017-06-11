@@ -69,13 +69,5 @@ def login_page():
 def sponsor():
     pass
 
-@app.route("/stories", methods=['GET'])
-def get_user():
-    """Load entries into template TODO: lazy loading"""
-    db = get_db()
-    cur = db.execute('select top 6 from entries order by id desc')
-    entries = cur.fetchall()
-    return render_template('stories.html', entries=entries)
-
 if __name__ == "__main__":
     app.run()
