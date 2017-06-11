@@ -1,30 +1,37 @@
 @font-face {
   font-family: 'Nexa';
-  src: url("../fonts/Nexa.otf"); }
+  src: url("../fonts/Nexa.otf") format("opentype");
+}
 html,
 body {
   height: 100%;
-  margin: 0; }
+  margin: 0;
+}
 
 body {
   background: #eee;
-  font-family: 'Avenir Next'; }
+  font-family: 'Avenir Next';
+}
 
 .container {
   width: 80%;
   padding: 0;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .row {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 [class*="col-"] {
   padding-left: 0;
-  padding-right: 0; }
+  padding-right: 0;
+}
 
 h1, h2, p {
-  margin: 0; }
+  margin: 0;
+}
 
 h1 {
   font-family: 'Nexa';
@@ -33,34 +40,43 @@ h1 {
   font-size: 65px;
   width: 70%;
   text-transform: uppercase;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+}
 
 @media only screen and (max-width: 767px) {
   h1 {
-    font-size: 40px; } }
+    font-size: 40px;
+  }
+}
 h2 {
   margin-top: -10px;
   margin-bottom: 20px;
   font-size: 35px;
   font-weight: 600;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 .page-wrapper {
   background-color: #fff;
   min-height: 100%;
-  margin-bottom: -52px; }
+  margin-bottom: -52px;
+}
 
 .page-wrapper.landing nav {
-  height: 350px; }
+  height: 350px;
+}
 .page-wrapper.login nav {
-  height: 300px; }
+  height: 300px;
+}
 
 .page-wrapper.login section {
-  display: flex; }
+  display: flex;
+}
 
 .fb-login {
   max-width: 300px;
-  display: block; }
+  display: block;
+}
 
 a.button {
   width: 100%;
@@ -69,37 +85,48 @@ a.button {
   margin: 0 20px 0 0;
   color: #000;
   background: url(../images/home-button.png);
-  background-size: cover; }
+  background-size: cover;
+}
 
 nav,
 main {
-  padding: 50px 45px 0 !important; }
+  padding: 50px 45px 0 !important;
+}
 
 nav {
   padding-right: 0 !important;
   background: url(../images/nav-bg.png);
-  background-size: cover; }
-  nav img {
-    width: 50%; }
+  background-size: cover;
+}
+nav img {
+  width: 50%;
+}
 
 @media only screen and (max-width: 767px) {
   nav {
-    height: 250px; } }
+    height: 250px;
+  }
+}
 .landing main p {
   font-size: 27px;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+}
 
 .terrible {
-  margin-bottom: 100px; }
+  margin-bottom: 100px;
+}
 
 .image-block img {
-  width: 100%; }
+  width: 100%;
+}
 
 footer {
   text-align: center;
   color: #fff;
   font-size: 16px;
   background-color: #2E2195;
-  height: 52px; }
-  footer p {
-    padding: 15px; }
+  height: 52px;
+}
+footer p {
+  padding: 15px;
+}
