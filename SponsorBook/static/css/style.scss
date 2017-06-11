@@ -3,13 +3,20 @@
   src: url("../fonts/Nexa.otf");
 }
 
+html,
 body {
-  background-color: #000;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #eee;
+  // background-color: #fff;
   font-family: 'Avenir Next';
 }
 
 .container {
-  width: 100%;
+  width: 80%;
   padding: 0;
   margin: 0 auto;
 }
@@ -32,8 +39,8 @@ h1 {
   font-family: 'Nexa';
   font-weight: bold;
   color: #fff;
-  font-size: 70px;
-  width: 60%;
+  font-size: 65px;
+  width: 70%;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -52,24 +59,41 @@ h2 {
   text-transform: uppercase;
 }
 
-.page-wrapper.landing {
+.page-wrapper {
   background-color: #fff;
-  padding-bottom: 100px;
-  border-bottom: 30px solid #2E2195;
+  min-height: 100%;
+  margin-bottom: -52px;
+}
 
-  p {
-    margin-bottom: 40px;
+.page-wrapper {
+  &.landing nav {
+    height: 350px;
   }
 
-  a.button {
-    width: 100%;
-    font-size: 20px;
-    padding: 12px 51px 17px 47px;
-    margin: 30px 20px 0 0;
-    color: #000;
-    background: url(../images/home-button.png);
-    background-size: cover;
+  &.login nav {
+    height: 300px;
   }
+}
+
+.page-wrapper.login {
+  section {
+    display: flex;
+  }
+}
+
+.fb-login {
+  max-width: 300px;
+  display: block;
+}
+
+a.button {
+  width: 100%;
+  font-size: 20px;
+  padding: 12px 51px 17px 47px;
+  margin: 0 20px 0 0;
+  color: #000;
+  background: url(../images/home-button.png);
+  background-size: cover;
 }
 
 nav,
@@ -81,7 +105,6 @@ nav {
   padding-right: 0 !important;
   background: url(../images/nav-bg.png);
   background-size: cover;
-  height: 400px;
 
   img {
     width: 50%;
@@ -94,15 +117,31 @@ nav {
   }
 }
 
-main {
+.landing main {
   p {
     font-size: 27px;
+    margin-bottom: 40px;
   }
 }
 
+.terrible {
+  margin-bottom: 100px;
+}
 
 .image-block {
   img {
     width: 100%;
+  }
+}
+
+footer {
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  background-color: #2E2195;
+  height: 52px;
+
+  p {
+    padding: 15px;
   }
 }

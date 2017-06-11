@@ -61,6 +61,13 @@ def get_user():
      entries = cur.fetchall()
      return render_template('stories.html', entries=entries)
 
+@app.route("/login", methods=['GET'])
+def login_page():
+     db = get_db()
+     cur = db.execute('select name from entries order by id desc')
+     entries = cur.fetchall()
+     return render_template('login.html', entries=entries)
+
 @app.route("/sponsor/<friend>")
 def sponsor():
     pass
