@@ -50,14 +50,14 @@ def initdb_command():
 @app.route("/", methods=['GET'])
 def index():
     db = get_db()
-    cur = db.execute('select first_name, last_name from entries order by id desc')
+    cur = db.execute('select name from entries order by id desc')
     entries = cur.fetchall()
     return render_template('show_entries.html', entries=entries)
 
 @app.route('/<path:name>', methods=['GET'])
 def get_user(name):
      db = get_db()
-     cur = db.execute('select first_name, last_name from entries order by id desc')
+     cur = db.execute('select name from entries order by id desc')
      entries = cur.fetchall()
      return render_template('show_entries.html', entries=entries)
 
