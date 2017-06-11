@@ -49,7 +49,7 @@ def initdb_command():
 
 @app.route("/", methods=['GET'])
 def index():
-    return render_template('index.html', entries=entries)
+    return render_template('index.html')
 
 @app.route("/stories", methods=['GET'])
 def get_user():
