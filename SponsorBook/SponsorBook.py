@@ -2,7 +2,6 @@ import os
 import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
 
-
 app = Flask(__name__) # create the application instance :)
 app.config.from_object(__name__)
 
@@ -36,6 +35,7 @@ def close_db(error):
         g.sqlite_db.close()
 
 def init_db():
+    """Load db from schema"""
     db = get_db()
     with app.open_resource('schema.sql', mode='r') as f:
         db.cursor().executescript(f.read())
@@ -49,15 +49,12 @@ def initdb_command():
 
 @app.route("/", methods=['GET'])
 def index():
-    db = get_db()
-    cur = db.execute('select name from entries order by id desc')
-    entries = cur.fetchall()
     return render_template('index.html', entries=entries)
 
 @app.route("/stories", methods=['GET'])
 def get_user():
      db = get_db()
-     cur = db.execute('select name from entries order by id desc')
+     cur = db.execute('select * from entries order by id asc')
      entries = cur.fetchall()
      return render_template('stories.html', entries=entries)
 
@@ -72,6 +69,13 @@ def login_page():
 def sponsor():
     pass
 
+@app.route("/stories", methods=['GET'])
+def get_user():
+    """Load entries into template TODO: lazy loading"""
+    db = get_db()
+    cur = db.execute('select top 6 from entries order by id desc')
+    entries = cur.fetchall()
+    return render_template('stories.html', entries=entries)
 
 if __name__ == "__main__":
     app.run()
