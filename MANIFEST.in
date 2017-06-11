@@ -1,0 +1,4 @@
+graft SponsorBook/templates
+graft SponsorBook/static
+graft SponsorBook/app
+include SponsorBook/schema.sql
