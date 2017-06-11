@@ -9,13 +9,18 @@ body {
 }
 
 body {
-  background: #eee;
+  background-color: #fff;
   font-family: 'Avenir Next';
 }
 
 .container {
-  width: 80%;
+  width: 100%;
   padding: 0;
+  margin: 0 auto;
+}
+
+.landing {
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -29,6 +34,11 @@ body {
   padding-right: 0;
 }
 
+.stories-container {
+  background-color: #fff;
+  margin: 0 auto;
+  width: 80%;
+}
 .stories-container [class*="col-"] {
   padding: 35px;
 }
@@ -69,14 +79,15 @@ h2 {
   background-color: #fff;
   min-height: 100%;
   margin-bottom: -52px;
+  background: url(../images/nav-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center -150px;
 }
-.page-wrapper.landing nav {
+.page-wrapper .landing nav {
   height: 350px;
 }
-.page-wrapper.login nav {
-  height: 300px;
-}
-.page-wrapper.stories nav {
+.page-wrapper .stories nav {
   height: 200px;
 }
 
@@ -106,8 +117,6 @@ main {
 
 nav {
   padding-right: 0 !important;
-  background: url(../images/nav-bg.png);
-  background-size: cover;
   color: #fff;
 }
 nav img {
